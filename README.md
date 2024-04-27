@@ -34,7 +34,7 @@ pip install --upgrade https://github.com/unlimblue/KNN_CUDA/releases/download/0.
 
 We use ShapeNet, ScanObjectNN, ModelNet40 and ShapeNetPart in this work. See [DATASET.md](./DATASET.md) for details.
 
-## 3. Point-MAE Models
+## 3. Point-UMAE Models
 |  Task | Dataset | Config | Acc.       |      
 |  ----- | ----- |-----|------------|
 |  Pre-training | ShapeNet |[pretrain.yaml](./cfgs/pretrain.yaml)| 93.1%      |
@@ -48,13 +48,13 @@ We use ShapeNet, ScanObjectNN, ModelNet40 and ShapeNetPart in this work. See [DA
 |  ----- | ----- |-----|  -----| -----|-----|-----|
 |  Few-shot learning | ModelNet40 |[fewshot.yaml](./cfgs/fewshot.yaml)| 97.1 ± 1.9| 98.6 ± 0.7| 92.6 ± 4.0| 95.1 ± 3.0| 
 
-## 4. Point-MAE Pre-training
+## 4. Point-UMAE Pre-training
 To pretrain Point-MAE on ShapeNet training set, run the following command. If you want to try different models or masking ratios etc., first create a new config file, and pass its path to --config.
 
 ```
 CUDA_VISIBLE_DEVICES=<GPU> python main.py --config cfgs/pretrain.yaml --exp_name <output_file_name>
 ```
-## 5. Point-MAE Fine-tuning
+## 5. Point-UMAE Fine-tuning
 
 Fine-tuning on ScanObjectNN, run:
 ```
